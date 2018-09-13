@@ -2,6 +2,8 @@ const express = require('express'); // Impprting Express.js
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 3000 ;
+
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials')
@@ -73,6 +75,6 @@ app.get('/bad' , (request , respond)=>{
 })
 
 
-app.listen( 4000 , ()=>{
-  console.log("Server is up and serving on: localhost:3000");
+app.listen( port , ()=>{
+  console.log(`Server is up and serving on: localhost: ${port}`);
 });
