@@ -25,9 +25,9 @@ app.use((request , respond , next )=>{
   next();
 });
 
-app.use((request , respond , next)=>{
-  respond.render('maintenance.hbs');
-});
+// app.use((request , respond , next)=>{
+//   respond.render('maintenance.hbs');
+// });
 
 
 
@@ -61,6 +61,13 @@ app.get('/home' , (request , respond)=>{
     content: ' Welcome to Home Page!! This is using Handlebars Functionality.'
   });
 });
+
+app.get('/projects' , (request , respond)=>{
+
+  respond.render('projects.hbs' , {
+    pageTitle : 'Projects'
+  });
+})
 
 app.get('/bad' , (request , respond)=>{
 
